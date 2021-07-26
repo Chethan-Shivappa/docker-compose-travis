@@ -1,0 +1,13 @@
+docker run -it -p 3000:3000 -v /app/node_modules -v $(pwd):/app IMAGE_ID
+dac09e14be7f
+
+
+docker run -it -p 3000:3000 -v /home/node/app/node_modules -v ~/my-project-directory:/home/node/app IMAGE_ID
+
+
+docker run -it -p 3000:3000 -v /home/node/app/node_modules -v ~/my-project-directory:/home/node/app dac09e14be7f
+
+docker run -it -p 3000:3000 -v /home/node/app/node_modules -v (pwd):/home/node/app dac09e14be7f
+
+[cmd] used //this works
+docker run -it -p 3000:3000 -v /home/node/app/node_modules -v (pwd):/home/node/app dac09e14be7f

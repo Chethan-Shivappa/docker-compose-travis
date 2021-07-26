@@ -1,0 +1,13 @@
+docker run -it -p 3000:3000 -v /home/node/app/node_modules -v (pwd):/home/node/app IMAGE_ID
+
+the above command says has 2 -v volume usages:
+-v /home/node/app/node_modules
+-v (pwd):/home/node/app
+
+the first switch indicates to use the node_modules already installed on the app 
+without modifying it.
+-v /home/node/app/node_modules
+
+the second switch indicates to use the other files and depenedencies located 
+in the dir of the host machine.
+-v (pwd):/home/node/app

@@ -59,4 +59,3 @@ Also, you can read up on the chown flag for the COPY instruction here:
 https://docs.docker.com/engine/reference/builder/#copy
 
 
-docker run -it -p 3000:3000 dac09e14be7f
