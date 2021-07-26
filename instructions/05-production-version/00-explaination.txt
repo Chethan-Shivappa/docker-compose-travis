@@ -1,0 +1,39 @@
+when we run react scripts: i.e
+npm run start
+it runs react-scripts start
+"start": "react-scripts start",
+
+during development there is a a dev-server which is responsible for
+communicating the index.html and associated js file to browser
+
+during production we need to optimize all the assets and serve only index.html
+hence we build using npm run build
+
+in order to serve the index.html to the server we make use of nginx
+
+multi-stage builder
+
+FROM node:alpine as builder
+WORKDIR '/app'
+COPY package.json .
+RUN npm install
+COPY . .
+RUN npm run build
+ 
+FROM nginx
+COPY --from=builder /app/build /usr/share/nginx/html
+
+but it wont work exactly as intended in AWS
+
+USE:BELOW VERSION FOR AWS
+
+
+FROM node:alpine
+WORKDIR '/app'
+COPY package.json .
+RUN npm install
+COPY . .
+RUN npm run build
+ 
+FROM nginx
+COPY --from=0 /app/build /usr/share/nginx/html
