@@ -19,6 +19,8 @@ function App() {
           <br />
           Added this new lines after binding the volume
           to the dir in host-machine
+          <br />
+          Added after creating docker-compose file.
         </a>
       </header>
     </div>
