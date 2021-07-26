@@ -1,0 +1,31 @@
+as we run a cmd to install required packages, node_modules dir is stored in the app itself
+hence delete the node_modules dir in the editor and re build it.
+the difference can be noticed:
+check out 01-instructions.txt or 02-instructions.txt in 01-build-image-from-Dockerfile in instructions to see o/p
+after removal
+Sending build context to Docker daemon  1.571MB
+before removal
+Sending build context to Docker daemon  256.7MB
+
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)> docker build -t chethansh/front-end-cra -f Dockerfile.dev .
+Sending build context to Docker daemon  1.571MB
+Step 1/6 : FROM node:alpine
+ ---> 4d2c046835fc
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 2578b917ffb9
+Step 3/6 : COPY package.json .
+ ---> Using cache
+ ---> dc815812740d
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> 25673088905d
+Step 5/6 : COPY . .
+ ---> f4726bd031f4
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in e9f928be6a4a
+Removing intermediate container e9f928be6a4a
+ ---> 1136c4e76940
+Successfully built 1136c4e76940
+Successfully tagged chethansh/front-end-cra:latest
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)> 

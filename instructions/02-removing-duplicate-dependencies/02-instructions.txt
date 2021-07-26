@@ -1,0 +1,49 @@
+--name 
+
+naming the container while Running.
+
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)> docker image ls
+REPOSITORY                       TAG             IMAGE ID       CREATED             SIZE
+chethansh/front-end-cra          latest          1136c4e76940   5 minutes ago       437MB
+<none>                           <none>          a4658ede5128   45 minutes ago      462MB
+<none>                           <none>          a9238e95dd0d   About an hour ago   462MB
+01-visits_node-app               latest          d38e78b14170   2 hours ago         117MB
+<none>                           <none>          584e4efa46cd   2 hours ago         117MB
+compose-sample-3_proxy           latest          d4559a6a6e34   5 hours ago         109MB
+postgres                         latest          b2fcd079c1d4   3 days ago          315MB
+nginx                            latest          08b152afcfae   4 days ago          133MB
+mysql                            latest          c60d96bd2b77   4 days ago          514MB
+httpd                            latest          73b8cfec1155   4 days ago          138MB
+archlinux                        latest          1f43a6ec6fd9   6 days ago          383MB
+node                             alpine          4d2c046835fc   11 days ago         112MB
+swift                            latest          55144e60f95e   12 days ago         2.1GB
+ubuntu                           latest          c29284518f49   12 days ago         72.8MB
+dpage/pgadmin4                   latest          20cef76099fd   13 days ago         249MB
+docker-rabbitmq-node_consumer    latest          489adfeb0070   2 weeks ago         73.1MB
+docker-rabbitmq-node_producer    latest          489adfeb0070   2 weeks ago         73.1MB
+nats                             latest          72641b68d54b   2 weeks ago         11.1MB
+rabbitmq                         3-management    485c275e2364   2 weeks ago         252MB
+redis                            latest          08502081bff6   4 weeks ago         105MB
+nats-streaming                   latest          12f2d32e0c9a   7 weeks ago         19.8MB
+rediscommander/redis-commander   latest          5392c6aa786e   2 months ago        77.2MB
+grpc/go                          latest          ed32d59baf71   2 years ago         767MB
+rabbitmq                         3.7.4           cae5b74b77de   3 years ago         127MB
+nginx                            1.13            ae513a47849c   3 years ago         109MB
+node                             8.11.1-alpine   e707e7ad7186   3 years ago         68.1MB
+
+
+
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)> docker container run -d -p 3000:3000 --name dv-using-cra chethansh/front-end-cra:latest 
+1c758a8ef0f7751da25b8a08575be5c2c7a9301a2cdf1de83b1449a4f1226cf9
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)> 
+
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)> docker container ls
+CONTAINER ID   IMAGE                            COMMAND                  CREATED              STATUS              PORTS                                       NAMES
+1c758a8ef0f7   chethansh/front-end-cra:latest   "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   dv-using-cra
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)> 
+
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)> docker container stop dv-using-cra 
+dv-using-cra
+csh@codenode ~/D/d/v/d/s/0/frontend (dev)>
+
+
