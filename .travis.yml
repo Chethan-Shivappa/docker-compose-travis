@@ -17,6 +17,9 @@ deploy:
   bucket_name: elasticbeanstalk-us-east-2-623039057870
   bucket_path: docker-compose-react
   on:
-    branch: master
+    repo: https://github.com/Chethan-Shivappa/docker-compose-travis.git
+    branches: 
+      only:
+        - master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
