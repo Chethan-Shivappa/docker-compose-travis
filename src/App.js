@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React!!!!
+          Learn React!
           <br />
           Added this new lines after binding the volume
           to the dir in host-machine
